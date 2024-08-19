@@ -1,7 +1,15 @@
 import { Button, TextField } from "@mui/material";
 import styles from "./header.module.scss";
+import { fetchRepos } from "../../store/api-actions";
+import { useEffect } from "react";
+import { useAppDispatch } from "../../hooks/use-dispatch";
 
 export function Header(): JSX.Element {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    const result = dispatch(fetchRepos({ username: "r1zyh" }));
+    console.log(result)
+  }, [dispatch]);
   return (
     <div className={styles.search}>
       <TextField
@@ -19,7 +27,7 @@ export function Header(): JSX.Element {
             height: "100%",
             display: "flex",
             alignItems: "center",
-            paddingLeft: "16px", 
+            paddingLeft: "16px",
           },
           "& .MuiInputBase-input": {
             padding: 0,
