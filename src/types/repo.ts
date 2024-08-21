@@ -1,5 +1,6 @@
 //данные о репозитории
 export type RepoData = {
+    id: string;
     name: string;
     language: string | null;
     forks_count: number;

@@ -5,6 +5,9 @@ import { useEffect } from "react";
 import { useAppDispatch } from "../../hooks/use-dispatch";
 
 export function Header(): JSX.Element {
+
+  //remove unused token from fetchRepos()
+  //добавить ввод, debounce
   const dispatch = useAppDispatch();
   useEffect(() => {
     const result = dispatch(fetchRepos({ username: "r1zyh" }));
