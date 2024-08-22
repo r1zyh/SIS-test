@@ -15,9 +15,14 @@ export function Main(): JSX.Element {
       Добро пожаловать
     </Typography>
   ) : (
-    <Box sx={{display: 'flex'}}>
+    <>
+    <Box sx={{display: 'flex', flexDirection: 'column'}}>
+      <Typography variant="h3" fontSize={48}>
+      Результаты поиска
+      </Typography>
     <RepositoriesList />
-    <RepoInfo/>
     </Box>
+    <RepoInfo/> 
+    </>
   );
 }

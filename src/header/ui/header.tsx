@@ -10,7 +10,7 @@ export function Header(): JSX.Element {
   //добавить ввод, debounce
   const dispatch = useAppDispatch();
   useEffect(() => {
-    const result = dispatch(fetchRepos({ username: "r1zyh" }));
+    const result = dispatch(fetchRepos({ username: "MichaelAny" }));
     console.log(result)
   }, [dispatch]);
   return (
