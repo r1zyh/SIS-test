@@ -20,7 +20,7 @@ export function RepositoriesList(): JSX.Element {
                 {repo.name}
               </Typography>
               <Typography variant="body2" className={styles.repoTextInfo}>
-                {repo.language ? repo.language : "uncertain"}
+                {repo.language || "uncertain"}
               </Typography>
               <Typography variant="body2" className={styles.repoTextInfo}>
                 {repo.forks_count}

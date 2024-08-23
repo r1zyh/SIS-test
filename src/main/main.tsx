@@ -16,7 +16,7 @@ export function Main(): JSX.Element {
     </Typography>
   ) : (
     <>
-    <Box sx={{display: 'flex', flexDirection: 'column'}}>
+    <Box sx={{display: 'flex', flexDirection: 'column', marginLeft: '32px', marginY: '24px'}}>
       <Typography variant="h3" fontSize={48}>
       Результаты поиска
       </Typography>

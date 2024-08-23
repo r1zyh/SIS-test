@@ -1,0 +1,7 @@
+.sortRepos {
+    display: grid;
+    grid-template-columns:  repeat(5, 1fr);
+    margin: 0, auto;
+    max-width: 912px;
+    padding: 16px;
+}
