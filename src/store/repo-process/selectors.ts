@@ -7,3 +7,8 @@ export const selectRepos = createSelector(
   [selectReposState],
   (reposState) => reposState.repos
 );
+
+export const isLoaded = createSelector(
+  [selectReposState],
+  (reposState) => reposState.loading
+);

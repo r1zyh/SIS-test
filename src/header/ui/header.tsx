@@ -1,23 +1,31 @@
 import { Button, TextField } from "@mui/material";
 import styles from "./header.module.scss";
 import { fetchRepos } from "../../store/api-actions";
-import { useEffect } from "react";
+import { ChangeEvent, useState } from "react";
 import { useAppDispatch } from "../../hooks/use-dispatch";
 
 export function Header(): JSX.Element {
-
   //remove unused token from fetchRepos()
   //добавить ввод, debounce
   const dispatch = useAppDispatch();
-  useEffect(() => {
-    const result = dispatch(fetchRepos({ username: "MichaelAny" }));
-    console.log(result)
-  }, [dispatch]);
+
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+  };
+
+  const handelButtonClick = () => {
+    dispatch(fetchRepos({ username: searchQuery }));
+  };
+
   return (
     <div className={styles.search}>
       <TextField
         placeholder="Введите поисковый запрос"
         variant="outlined"
+        onChange={handleInputChange}
         sx={{
           width: "912px",
           height: "42px",
@@ -42,6 +50,7 @@ export function Header(): JSX.Element {
       />
       <Button
         variant="contained"
+        onClick={handelButtonClick}
         sx={{
           width: "105px",
           height: "42px",
