@@ -1,16 +1,16 @@
-import { Box } from "@mui/material";
 import { Footer } from "../../footer/ui/footer";
 import { Header } from "../../header/ui";
 import { Main } from "../../main";
 
+//вынести все тест стили из sx
+//подредактировать разметку по пикселям
+
 export function App() {
   return (
-    <div>
-      <Box sx={{display: 'flex', flexDirection: 'column', minHeight: '100vh'}}>
+      <>
       <Header />
       <Main />
       <Footer />
-      </Box>
-    </div>
+      </>
   );
 }

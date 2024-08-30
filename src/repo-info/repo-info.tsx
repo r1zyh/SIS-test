@@ -1,12 +1,21 @@
 import { Typography } from "@mui/material";
-import { useAppSelector } from "../hooks/use-selector";
-import { isLoaded } from "../store/repo-process/selectors";
 
 export function RepoInfo(): JSX.Element {
-  const isLoading = useAppSelector(isLoaded);
-  return !isLoading ? (
-    <Typography>Выберите репозиторий</Typography>
-  ) : (
-    <div>some template</div>
+  return (
+    <Typography
+      sx={{
+        margin: "auto", // Центрирование содержимого
+        backgroundColor: "#F2F2F2", // Фоновый цвет
+        width: "480px", // Полная ширина контейнера
+        height: "912px", // Полная высота контейнера
+        marginLeft: "82px",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      Выберите репозиторий
+    </Typography>
+
   );
 }

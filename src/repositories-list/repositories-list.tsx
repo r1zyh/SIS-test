@@ -13,7 +13,7 @@ export function RepositoriesList(): JSX.Element {
     <>
       <List className={styles.repoList}>
         <SortRepos />
-        {repos.map((repo) => (
+        {repos.slice(0, 4).map((repo) => (
           <Fragment key={repo.id}>
             <ListItem className={styles.repoListItem}>
               <Typography variant="body2" className={styles.repoTextInfo}>

@@ -3,11 +3,11 @@ import styles from "./main.module.scss";
 import { RepositoriesList } from "../repositories-list";
 import { RepoInfo } from "../repo-info";
 import { useAppSelector } from "../hooks/use-selector";
-import { isLoaded } from "../store/repo-process/selectors";
+import { isRepoListLoaded } from "../store/repo-process/selectors";
 
 export function Main(): JSX.Element {
-  const isLoading = useAppSelector(isLoaded);
-  return !isLoading? (
+  const isLoading = useAppSelector(isRepoListLoaded);
+  return !isLoading ? (
     <Typography
       variant="h1"
       className={styles.greeting}
@@ -17,7 +17,7 @@ export function Main(): JSX.Element {
       Добро пожаловать
     </Typography>
   ) : (
-    <>
+    <div style={{display: 'flex'}}>
       <Box
         sx={{
           display: "flex",
@@ -32,6 +32,6 @@ export function Main(): JSX.Element {
         <RepositoriesList />
       </Box>
       <RepoInfo />
-    </>
+    </div>
   );
 }
